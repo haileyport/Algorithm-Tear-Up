@@ -2,7 +2,8 @@ const input = require('fs').readFileSync('/dev/stdin').toString().split('\n');
 
 
 // var clacss = Number(input[0]);
-let 
+let smartStudent = 0;
+ 
 for(let i=1; i<= Number(input[0]); i++){
     let sum = 0;
     let count = 0;

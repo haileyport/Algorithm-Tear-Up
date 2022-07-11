@@ -1,11 +1,24 @@
-let fs = require('fs');
-let input = fs.readFileSync('/dev/stdin').toString().split(' ');
-// 입력값 받아오기
+let input = Number(require('fs').readFileSync('/dev/stdin').toString());
+// 입력값 가져오기
+let num = input.split(); // num을 선언하여 input을 배열형태로 할당한다.
+let sum = 0;  // 분리한 두 숫자를 담을 변수를 선언한다.
+let i = 0;  // 최종적으로 출력할 횟수를 변수 i로 선언한다.
 
-let num = Number(input); // input을 num에 숫자형태로 다시 할당한다.
-let result = "";
-for(let i = 1; i <= 9; i++) {
-        val = num * i
-        result += `${num} * ${i} = ${val}` + `\n` // for문으로 입력받은 수 만큼 곱셈을 반복하여 출력한다.
+while (true) {
+    i++;
+
+    sum  = num[0] + num[1];
+    if(sum.length === 1) {
+        num = sum[0] + num[1];
+    } else if(sum.length === 2) {
+        num = sum[1] + num[1]
     }
-console.log(result);
+    // sum = Math.floor(num / 10) + num % 10;
+    // num = (num % 10) * 10 + sum % 10; 
+
+    if (num === input) {
+	break;
+    } 
+}
+
+console.log(i);
