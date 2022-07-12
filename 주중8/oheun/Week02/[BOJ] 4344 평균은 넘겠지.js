@@ -1,3 +1,5 @@
+// 틀린 이유 : Type Error
+
 /*
 평균은 넘겠지
 
@@ -18,8 +20,28 @@ const fs = require('fs');
 // /dev/stdin을 적용해 stdin 파일을 비동기적으로 불러와 처리하는 것
 const input = fs.readFileSync("/dev/stdin").toString().trim().split("\n"); // 줄 나누기
 
-const count = input[0];
+const testcase = input[0]; // 테스트 케이스 개수만큼
 
-for (let i = 0; i < count; i++) {
-    const arr[i] = input[i].split(' ').map(Number);// 2번째 줄을 공백을 기준으로 추출한다.
+let sum = 0;            // 점수 합
+let average = 0;        // 평균
+
+// 이중반복문
+for (let i = 1; i < testcase; i++) {
+    // 각 행마다
+    // slice로 학생 수와 점수 구분
+    let student = parseInt(input[i].slice(0,1)); // 학생의 수 => int
+    let score =  input[i].slice(1) // 학생 점수 
+    // reduce를 이용해서 합
+    sum = score.reduce(function(a, b){ return a + b; }, 0);
+    average = sum/student; // 평균
+    let count = 0;          // 평균보다 많은 학생 수
+    for (let j = 0; j< student; j++) {
+        // 평균이 전체 합의 몇 퍼센트인지 보면 됨
+        if(score[j] > average){
+            count++;
+        }
+    }
+  
+    console.log(((count / student) * 100).toFixed(3) + '%');
+    
 }
