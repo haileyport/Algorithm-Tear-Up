@@ -5,11 +5,12 @@ const [firstLine, input] = require("fs")
   .split("\n");
 
 let num = Number(firstLine.split(" ")[1]);
-let result = "";
+// let result = "";
 
 input
   .split(" ")
   .map(Number)
   .filter((arr) => num > arr)
-  .map((i) => (result += i + " "));
-console.log(result.trim());
+  .join(" ")
+  // .map((i) => (result += i + " "));
+console.log(result);
