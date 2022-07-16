@@ -7,4 +7,4 @@ for(let i = 1; i <= num ; i++){
     result = result + i ;
 }
 
-console.log(result);
+console.log(result);//시간초과되서?
