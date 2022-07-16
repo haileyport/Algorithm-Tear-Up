@@ -8,7 +8,7 @@ let num = Number(input[0]); //길이는 5
 //padstat를 쓰면 num만큼 길이에서 문자가 없는 빈공간 앞에 다른걸로 치환이 가능함
 //그이후에 *을 하나씩 붙여나가는 형식
 let arr = '*';
-for(let i =num; i >= 1 ; i --){// 5일때 
-   console.log(arr.padStart(num, ' '));
+for(let i =num; i >= 1 ; i --){// 5일때  
+   console.log(arr.padStart(num, ' '));//end도 있다.
     arr =arr + '*';
 }
