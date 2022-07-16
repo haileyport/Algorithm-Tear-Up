@@ -9,7 +9,7 @@ for(let i = 1; i <=count ; i++ ){
     let arr = input[i].split(" ");
     a = Number(arr[0]);
     b = Number(arr[1]);
-   console.log(a+b);
+   console.log(a+b);//안에다 써도되남
 }
 
 
