@@ -5,6 +5,6 @@ let num = Number(input[0]);
 
 let result = '';
 for(let i =1; i <= num ; i ++){
-    result = result + "*" ;
+    result = result + "*" ;//먼저 console.쓰고 해도되는듯
     console.log(result);
 }
