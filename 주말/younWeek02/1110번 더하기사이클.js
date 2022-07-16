@@ -14,6 +14,6 @@ let result = 0//초기화
         if(num === input) break;
   }
         console.log(result)
-  //마지막 =이 처음과 같을때 반복된 횟수가 답임  반복횟수를 모르니 while문을 사용
+  //마지막 =이 처음과 같을때 반복된 횟수가 답임  반복횟수를 모르니 while문을 사용한다
 
    
