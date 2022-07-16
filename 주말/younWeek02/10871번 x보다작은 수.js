@@ -13,4 +13,4 @@ for( let i = 0 ; i < one ; i ++){
        
     }
 }
-console.log(result.join(' '));
+console.log(result.join(' '));//좀 많이 헷갈렸다
