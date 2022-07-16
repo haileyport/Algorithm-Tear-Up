@@ -6,4 +6,4 @@ let result = "";
 for(let i=num; i>=1; i--){
     result += i + "\n";
 } 
-console.log(result);
+console.log(result);//앞문제와 반대로하는 것
