@@ -6,6 +6,6 @@ for (let i = 0; i < input.length ; i++) {
     let a = Number(arr[0]);
     let b = Number(arr[1]);
     
-    console.log(a+b);
+    console.log(a+b);//
 }
     
