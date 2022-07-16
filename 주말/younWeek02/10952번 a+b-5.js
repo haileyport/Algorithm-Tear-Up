@@ -10,5 +10,5 @@ for(let i = 0 ; i < input.length-1 ; i++){ //5일때 4까지 까지임
     const a = Number(arr[0]);
     const b = Number(arr[1]);
     
-   console.log(a+b);
+   console.log(a+b);//
 }
