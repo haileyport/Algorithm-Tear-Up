@@ -28,8 +28,8 @@ if(input.length === 1){
 for(let i = 0; i <= 99; i++){
 
   // 각 자릿 수를 숫자열로 변환 후 더한 값을 sum에 할당해주고 다음 비교를 위해 문자열로 변환
-  sum = Number(front) + Number(end);
-  sum = String(sum);
+  sum = String(Number(front) + Number(end));
+//   sum = String(sum);
   newNum = end + sum[sum.length - 1];
   // newNum이 생길 때 마다(연산될 때 마다) count에 1씩 더해준다 
   count++;
