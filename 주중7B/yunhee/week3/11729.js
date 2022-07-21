@@ -28,4 +28,4 @@ function solution(num, from, other, to){
 
 solution(N, '1','2','3');
 console.log(count);
-console.log(answer.map((element) => element.join(" ")).join("\n"));\
+console.log(answer.map((element) => element.join(" ")).join("\n"));
