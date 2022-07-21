@@ -4,16 +4,26 @@ let input = fs.readFileSync(filePath).toString().trim().split('\n');
 
 input = +input[0];
 
-function solution(num) {
-  // 재귀적인 패턴의 별 찍기, N이 3의 거듭제곱 ( 3, 9 ,27) ...
-  // N 은 N * N 패턴의 정사각형
+let str = '';
 
-  let star3 = '***';
-  let star2 = '**';
-
-  let star = `${star3.repeat(3)}${'\n'}${star2.repeat(2)}${'\n'}${star3.repeat(3)}`;
-
-  console.log(star + star);
+function PaintStar(i, j) {
+  if (i % 3 === 1 && j % 3 === 1) {
+    str += ' ';
+  } else {
+    if (Math.floor(i / 3) === 0 && Math.floor(j / 3) === 0) {
+      str += '*';
+    } else {
+      PaintStar(Math.floor(i / 3), Math.floor(j / 3));
+    }
+  }
 }
 
-solution(input);
+for (let i = 0; i < input; i++) {
+  for (let j = 0; j < input; j++) {
+    PaintStar(i, j);
+  }
+  if (i !== input - 1) {
+    str += '\n';
+  }
+}
+console.log(str);

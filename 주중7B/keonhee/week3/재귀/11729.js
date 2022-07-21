@@ -1,7 +1,6 @@
-//하노이 탑 이동 순서
-
-const fs = require("fs");
-const input = fs.readFileSync("./text.txt").toString();
+const fs = require('fs');
+const filePath = process.platform === 'linux' ? '/dev/stdin' : './input.txt';
+let input = fs.readFileSync(filePath).toString().trim().split('\n');
 
 let N = Number(input); // 원판의 갯수
 let count = 0;
@@ -25,6 +24,8 @@ function Hanoi(num, from, other, to) {
     Hanoi(num - 1, other, from, to);
   }
 }
-Hanoi(N, "1", "2", "3");
+Hanoi(N, '1', '2', '3');
 console.log(count);
-console.log(answer.map((element) => element.join(" ")).join("\n"));
+console.log(answer.map((element) => element.join(' ')).join('\n'));
+
+// https://nyang-in.tistory.com/210 참고

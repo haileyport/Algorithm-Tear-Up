@@ -23,7 +23,7 @@ function solution(input, students, arrays) {
 
   // 평균 을 넘는 학생의 수
   let numberOverAverage = new Array(input).fill(0);
-
+  
   arrays.map((array, i) => {
     array = array.map(Number);
     // 평균 구해서 averageArr 에 할당시켜준다.
