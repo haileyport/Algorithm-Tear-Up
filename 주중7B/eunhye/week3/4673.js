@@ -1,9 +1,25 @@
 //셀프넘버
 
-//f(a) = a[0] + a[1] + a
-//f(a)로 만들 수 없는 a는?
+function d(n) {
+  let number = n;
+  let result = 0;
 
-//배열에 10000까지의 숫자를 다 넣고
-//셀프넘버가 아닌 수를 제거
+  for (let i = 0; i < String(n).length; i++) {
+    result += number % 10;
+    number = Math.floor(number / 10);
+  }
+  return n + result;
+}
 
-//시간제한에 한참 오버되어서 폐기
+const range = 10000;
+let selfNumbers = Array(range + 1).fill(true);
+
+for (let i = 0; i <= range; i++) {
+  selfNumbers[d(i)] = false;
+}
+
+for (let i = 0; i < range; i++) {
+  if (selfNumbers[i]) {
+    console.log(i);
+  }
+}
