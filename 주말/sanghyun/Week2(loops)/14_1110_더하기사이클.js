@@ -49,3 +49,4 @@ function solution (income){
 }
 solution(firstNum);
 console.log(i);
+
