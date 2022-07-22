@@ -23,10 +23,6 @@
     2. console.log(count)
 */
 
-let startTime = new Date().getTime();
-
-
-
 let fs = require('fs');
 let input = fs.readFileSync('input.txt').toString().split(' ');
 
@@ -39,21 +35,27 @@ let variableCost = Number(input[1]);
 let price = Number(input[2]);
 let count = 0;
 
-
 // 1. while문으로 총 수입(price * count)이 총 비용(fixedCost + variableCost)보다 작거나 같을 동안
 //     1-1. count += 1
 
-while((price * count) <= (fixedCost + variableCost * count)){
+// while((price * count) <= (fixedCost + variableCost * count)){
 
-    // console.log((price * count), (fixedCost + variableCost * count));
-    count++;
+//     // console.log((price * count), (fixedCost + variableCost * count));
+//     count++;
+// }
+
+// // 2. console.log(count)
+// console.log(count);
+
+
+
+
+// let endTime = new Date().getTime();
+// console.log(endTime - startTime);
+
+if(variableCost >= price){
+    console.log(-1);
+}else{
+    let answer = Math.floor(fixedCost / (price - variableCost) + 1);
+    console.log(answer);
 }
-
-// 2. console.log(count)
-console.log(count);
-
-
-
-
-let endTime = new Date().getTime();
-console.log(endTime - startTime);
