@@ -1,7 +1,7 @@
 let fs = require('fs');
 
-// let input = fs.readFileSync('/dev/stdin').toString().split('\n').map(el => Number(el));
-let input = fs.readFileSync('./03_2577.txt').toString().split('\n').map(el => Number(el));
+let input = fs.readFileSync('/dev/stdin').toString().trim().split('\n').map(el => Number(el));
+// let input = fs.readFileSync('./03_2577.txt').toString().trim().split('\n').map(el => Number(el));
 
 /* 궁금한 부분 */
 // 정답
