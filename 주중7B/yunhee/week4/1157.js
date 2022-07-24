@@ -1,7 +1,7 @@
 /* 1157번 단어 공부 */
 
 let fs = require("fs");
-let input = fs.readFileSync(process.platform === "linux" ? "dev/stdin" : "input.txt").toString().trim();
+let input = fs.readFileSync("input.txt").toString().trim();
 
 let obj = {};
 
