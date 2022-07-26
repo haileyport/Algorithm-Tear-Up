@@ -55,7 +55,8 @@ _with CodeStates_
   - [BOJ] - 백준
   - [PGS] - 프로그래머스
   - [ETC] - 그외
-- 리포지토리 관리용 커밋: [Manage]만 사용합니다.
+- 리포지토리 관리용 커밋: [Manage]
+- 머지용 커밋: [Mrg]
   <br/>
   <br/>
 
