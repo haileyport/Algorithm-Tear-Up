@@ -1,44 +1,27 @@
 const input = require('fs').readFileSync('/dev/stdin').toString()
 
+let number = Number(input);
+let str = "";
 
-function pattern(num){
-    if (num === 0){
-        return ''
+function PaintStar(i, j){
+    if(i % 3 === 1 && j % 3 === 1){
+        str += " ";
+    }else{
+        if(Math.floor(i / 3) === 0 && Math.floor(j / 3) === 0){
+            str += "*";
+        }else{
+            PaintStar(Math.floor(i / 3), Math.floor(j / 3));
+        }
     }
-    if(num % 3 === 0 ){
-    	    return `***`+pattern(num-1)
-    }else {return pattern(num-1)}
-
 }
-function pattern2(num){
-	if(num===0){
-		return ''
-	}
-	   if(num % 3 === 0 ){
-	return `* *`+pattern2(num-1)
-	   	
-	   }else {return pattern2(num-1)}
- }
- 
- function nonePattern(num){
- 	if (num === 0){
-        return ''
+
+for(let i = 0; i < number; i++){
+    for(let j = 0; j < number; j++){
+        PaintStar(i, j);
     }
-    if(num % 3 === 0 ){
-    	    return `   `+nonePattern(num-1)
-    }else {return nonePattern(num-1)}
- }
-
-function patternWarp(num){
-	return pattern(num)+'\n'+pattern2(num)+'\n'+pattern(num)
-
+    if(i !== number - 1){
+        str+= "\n";
+    }
 }
-function nonepatternWarp2(num){
-	return nonePattern(num)+'\n'+nonePattern(num)+'\n'+nonePattern(num)
-}
+console.log(str);
 
-// function patternNoneSpace(num){
-// 	return patternWarp(num)+'\n'+nonepatternWarp2(num)
-// }
-console.log(patternWarp(input))
-//첫번째 줄 완성 ..다음줄은..
