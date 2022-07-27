@@ -1,17 +1,10 @@
-let input = require('fs').readFileSync('/dev/stdin').toString().trim().split('\n');
-//let input = require('fs').readFileSync('예제.txt').toString().trim().split('\n');
+const fs = require('fs');
+let input = fs.readFileSync('/dev/stdin').toString().trim();
 
-let croatia = ['c=', 'c-', 'dz=', 'd-', 'lj', 'nj', 's=', 'ze']
-let count = 0;
+const croatian = ["c=", "c-", "dz=", "d-", "lj", "nj", "s=", "z="]
 
-for(let i = 0; i < croatia.length; i++){
-    if(input[0].includes(croatia[i])){
-        count ++
-        input[0] = input[0].replace(croatia[i], ' ');
-    }
-
+for (let i = 0; i < croatian.length; i++) {
+  input = input.replaceAll(croatian[i], 'C'); // 하나의 문자열만 차지하게 바꿈
 }
-//console.log(result) //3
-//console.log(input[0].split(' ').join('').length) // e  ak //3
-let answer = count + input[0].split(' ').join('').length
-console.log(answer)
+
+console.log(input.length);
