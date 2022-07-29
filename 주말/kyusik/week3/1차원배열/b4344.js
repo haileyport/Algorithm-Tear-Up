@@ -1,5 +1,5 @@
 let input = require('fs').readFileSync('/dev/stdin').toString().split('\n');
-
+//다시풀어보자 변수설정 많이하더라도 차분히 처음부터 풀어보자
 let c = parseInt(input[0]);
 
 for (let i = 1; i <= c; i++) {
