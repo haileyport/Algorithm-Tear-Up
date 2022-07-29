@@ -11,6 +11,7 @@ for (let el of input) {
 }
  */
 console.log(maxNum);
+//indexOf 메서드로 다시 해보자
 for (let i = 0; i < input.length; i++) {
     if (parseInt(input[i]) === maxNum) {
         console.log(i + 1);
