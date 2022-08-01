@@ -10,8 +10,7 @@ function solution(input){
 
     outer : for(let i = 0; i < n; i++){
         // 주어진 수가 1이거나 2로 나눠지면 소수가 아니므로 continue로 넘어간다.
-        if(arr[i] === 2){
-        }else if(arr[i] === 1 || arr[i] % 2 === 0){
+        if(arr[i] === 1 || (arr[i] !== 2 && arr[i] % 2 === 0)){
             continue;
         }
 
