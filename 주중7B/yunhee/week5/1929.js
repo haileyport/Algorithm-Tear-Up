@@ -13,7 +13,7 @@ function solution(input){
             continue;
         }
 
-        // 주어진 수를 3부터 자신 전까지 나눠서 나눠지면 continue로 넘어간다.
+        // 주어진 수를 3부터 자신의 제곱근까지 나눠서 나눠지면 continue로 넘어간다.
         inner : for(let j = 3; j <= Math.sqrt(i); j+= 2){
             if(i % j === 0){
                 continue outer;
