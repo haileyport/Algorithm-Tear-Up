@@ -11,15 +11,18 @@ function solution(input){
     let nums = input[1].split(" ").map(Number);
     let max = 0;
 
+    // 세장의 카드가 겹치지 않도록 반복하면서 합친다.
     for(let i = 0; i < nums.length - 2; i++){
         for(let j = i + 1; j < nums.length - 1; j++){
             for(let k = j + 1; k < nums.length; k++){
                 let sum = nums[i] + nums[j] + nums[k];
     
+                // 세장의 합이 m보다 크면 다음으로 넘어간다.
                 if(sum > m){
                     continue;
                 }
 
+                // 세장의 합이 max보다 크면 max에 합을 넣어준다.
                 if(sum > max){
                     max = sum;
                 }
