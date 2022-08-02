@@ -1,7 +1,7 @@
 /*
-통과 여부 :
-시간 복잡도 :
-공간 복잡도 :
+통과 여부 : 통과!!!!
+시간 복잡도 : 180 ms
+공간 복잡도 : 9684 KB
 
 [문제]
 문제 : 2798번 블랙잭 / 브론즈2
@@ -79,8 +79,8 @@
 //1. 입력 받기
 const fs = require('fs');
 const filePath = process.platform === 'linux' ? '/dev/stdin' : './input.txt';
-//let input = fs.readFileSync(filePath).toString().trim().split('\n');
-let input = fs.readFileSync(__dirname + '/input.txt').toString().trim().split('\n');
+let input = fs.readFileSync(filePath).toString().trim().split('\n');
+//let input = fs.readFileSync(__dirname + '/input.txt').toString().trim().split('\n');
 
 let numberCard = input[0].split(' ')[0];
 let total = input[0].split(' ')[1];
@@ -92,11 +92,12 @@ let number = input[1].split(' ').map(num =>Number(num));   // map 이용해서 N
 let temp = 0;
 let result = 0;               
 // console.log(typeof result, result );
-for (let i = 0; i < numberCard; i++) {
+// 중복 제거를 해야 함.
+for (let i = 0; i < numberCard-2; i++) {
     // console.log('i는 잘 나오고 있어요? 네~~', i);
-    for (let j = i+1; j < numberCard; j++) {
+    for (let j = i+1; j < numberCard-1; j++) {
         // console.log('j도 잘 나오고 있어요? 네~~', j);
-        for (let k = i+2; k < numberCard; k++) {
+        for (let k = j+1; k < numberCard; k++) {
             // console.log('k도 잘 나오고 있어요? 네~~', k);
             temp = number[i] + number[j]+ number[k];
             if (temp > result && temp <= total) {
