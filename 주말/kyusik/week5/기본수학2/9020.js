@@ -1,6 +1,6 @@
 const fs = require('fs');
 const input = fs.readFileSync('/dev/stdin').toString().split('\n').map(n => Number(n));
-
+//console.log(input)
 // 2부터 10000까지의 숫자 중 소수 구하기
 const n = 2;
 const m = 10000;
@@ -27,8 +27,9 @@ for (let i = 0; i < input.length; i++) {
     // 골드바흐 파티션 구하기
     const num = Number(input[i]);
     // 가능한 골드바흐 파티션을 저장할 배열
+    console.log(num);
     let answer = [];
-    // 주어진 수의 절반보다 작은 소수만 탐색하면 됨  
+    // 주어진 수의 절반만큼의 소수만 탐색하면 됨  
     //ex) 10의 경우 num/2+1을 안하고 전체를 구하면 [3,7] [5,5] [7,3] 이 골드바흐 파티션으로 나옴. 여기서 [7,3]을 제외시키기위함.
     for (let j = 0; prime[j] < num / 2 + 1; j++) {
       // (주어진 수 - 소수)가 소수인지
