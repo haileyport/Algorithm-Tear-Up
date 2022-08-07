@@ -3,6 +3,9 @@ let fs = require('fs');
 let input = fs.readFileSync('./05_4948.txt').toString().trim().split('\n');
 
 function isPrime(num) {
+  if(num === 1){
+    return false;
+  }
   if(num === 2) {
     return true;
   }
