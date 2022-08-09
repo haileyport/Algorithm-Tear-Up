@@ -2,7 +2,7 @@ const fs = require("fs");
 const { stringify } = require("querystring");
 const filePath = process.platform === "linux" ? "/dev/stdin" : "./input.txt";
 let input = fs.readFileSync(filePath).toString().trim()//.split("\n");
-
+// math floor 써서 다시풀어보자 하승님 참고
 if (input < 10) {
     console.log(input);
 } else if (input < 100) {
@@ -14,13 +14,13 @@ if (input < 10) {
             count++;
         }
     }
-    console.log(input[2], input[1], input[0])
+    //console.log(input[2], input[1], input[0])
     console.log(count);
 }
 /* 
 n은 n<=1000 인 자연수
-n이 1의자리 = 모두 다 한수. 즉 9개
-n이 두자릿수 = 모두 다 한수. 즉 90개
+n이 1의자리 = 모두 다 한수. 즉 9개  1 2 3 4 5 6 7 8 9
+n이 두자릿수 = 모두 다 한수. 즉 90개 1 0 11 12 13 
 n이 세자릿수
 100의자리 - 10의자리 = 10의자리 - 1의자리 -> 한수
 
