@@ -16,7 +16,7 @@ function isPrime(num) {
   }
   return true; 
 }
-
+// 제일 높은 값의 소수를 구하고 필터링
 function solution(income) {
   let result = ''; //결과 배열 생성
   let n = input.map(el => Number(el));

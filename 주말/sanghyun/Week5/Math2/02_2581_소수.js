@@ -26,6 +26,7 @@ function solution (income){
       arr.push(start)
     }
   }
+  console.log(arr);
   if (arr.length !== 0){
     console.log(arr.reduce((a, b) => a + b))
     console.log(arr[0]);
