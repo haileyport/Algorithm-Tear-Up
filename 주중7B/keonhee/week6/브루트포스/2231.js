@@ -19,7 +19,7 @@ function solution(num) {
     let numArr = [i];
     // 기존숫자 분해된 배열
     let splittedNum = String(i).split('').map(Number);
-    // 두 배열을 concatinating 해서 합칠 배열을 만들어준다
+    // 두 배열을 concatenating 해서 합칠 배열을 만들어준다
     numArr = numArr.concat(splittedNum);
     // reduce 함수 이용해서 비교 , 가장 먼저 나온 숫자 ( 최솟값 ) 출력
     if (numArr.reduce((a, b) => a + b) === num) {
