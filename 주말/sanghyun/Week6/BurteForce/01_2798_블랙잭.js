@@ -1,5 +1,5 @@
 let fs = require('fs');
-// let input = fs.readFileSync('/dev/stdin').toString().trim().split(' ');
+// let input = fs.readFileSync('/dev/stdin').toString().trim().split('\n');
 let input = fs.readFileSync('./01_2798.txt').toString().trim().split('\n');
 
 const solution = (income) => {
