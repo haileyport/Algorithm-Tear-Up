@@ -35,6 +35,7 @@ let cook = Number(input[1]);
 let result = minute + cook;
 if (result >= 60) {
   // 60분을 초과한다면
+  // 아 나머지로 계산하는 게 있었네 (성훈님 발표 참고)
   minute = result - 60 * parseInt(result / 60);
   time += parseInt(result / 60); // 추가된 시간을 60분으로 나눴을 때의 정수 = 시간
 
