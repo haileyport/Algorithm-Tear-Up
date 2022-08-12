@@ -17,18 +17,21 @@ output :
 * 틀린 이유 Number()
 */
 
-
 //1. 입력 받기
-const fs = require('fs');
-const filePath = process.platform === 'linux' ? '/dev/stdin' : './input.txt';
-let input = fs.readFileSync(filePath).toString().trim().split('\n');
+const fs = require("fs");
+const filePath = process.platform === "linux" ? "/dev/stdin" : "./input.txt";
+let input = fs.readFileSync(filePath).toString().trim().split("\n");
 // let input = fs.readFileSync(__dirname + '/input.txt').toString().trim().split('\n');
 
 let testCase = input.shift();
 
 // console.log(testCase);
 
-for (let i=0; i < testCase; i++){
-    let number = input[i].split(' ');
-    console.log(`Case #${i+1}: ${number[0]} + ${number[1]} = ${Number(number[0]) + Number(number[1])}`);
+for (let i = 0; i < testCase; i++) {
+  let number = input[i].split(" ");
+  console.log(
+    `Case #${i + 1}: ${number[0]} + ${number[1]} = ${
+      Number(number[0]) + Number(number[1])
+    }`
+  );
 }
