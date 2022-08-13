@@ -56,4 +56,4 @@ function check(x, y) {
 
 console.log(min);
 
-// 출처 - https://jaekwan.tistory.com/110
+// 참고 - https://jaekwan.tistory.com/110
