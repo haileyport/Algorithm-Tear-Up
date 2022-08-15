@@ -1,32 +1,4 @@
-26 5
-Bulbasaur
-Ivysaur
-Venusaur
-Charmander
-Charmeleon
-Charizard
-Squirtle
-Wartortle
-Blastoise
-Caterpie
-Metapod
-Butterfree
-Weedle
-Kakuna
-Beedrill
-Pidgey
-Pidgeotto
-Pidgeot
-Rattata
-Raticate
-Spearow
-Fearow
-Ekans
-Arbok
-Pikachu
-Raichu
-25
-Raichu
-3
-Pidgey
-Kakuna
+10
+6 3 2 10 10 10 -10 -10 7 3
+8
+10 9 -5 2 3 4 5 -10
