@@ -7,3 +7,4 @@ for(let i = 1; i < max; i ++) {
 }
 // result = Number(input)+Number(input[0])+Number(input[1])+Number(input[2]);
 console.log(result)
+//다시하기
