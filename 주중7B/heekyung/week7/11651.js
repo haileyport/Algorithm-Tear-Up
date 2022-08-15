@@ -4,12 +4,12 @@ const testCase = input.shift()
 const xy = input.map(v=>v.split(' ').map(x=>+x))
 //map x => +x 를 해주지 않으면 틀림처리됨 음수처리
 const result = xy.sort((a,b)=>{
-  if(a[0]>b[0]){
+  if(a[1]>b[1]){
     return 1;
-  }else if(a[0]<b[0]){
+  }else if(a[1]<b[1]){
     return -1;
   }else{
-    return a[1]-b[1]
+    return a[0]-b[0]
   }
 })
   console.log(result.map(v=>v.join(' ')).join('\n'))
