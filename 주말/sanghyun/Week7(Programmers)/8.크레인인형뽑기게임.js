@@ -14,10 +14,10 @@ function solution(board, moves) {
       }
     }
   }
-  // console.log(answer);
+  console.log(answer);
   // 중복되는 것 제거 
   let count = 0;
-  for(let i = 0; i < answer.length -1; i++){
+  for(let i = 0; i < answer.length -1; i++){ //while
     // console.log(`현재 보고 있는 index는 ${i}`)
     if(answer[i] === answer[i+1]){
       answer.splice(i, 2);
