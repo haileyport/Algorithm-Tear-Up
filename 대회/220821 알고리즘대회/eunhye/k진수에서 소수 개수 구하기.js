@@ -1,5 +1,5 @@
 function solution(n, k) {
-  var answer = -1;
+  var answer = 0;
 
   //양의 정수 n을 k진수로 변환
   //진수 변환한 수에서 조건에 맞는 수를 구하기
@@ -7,27 +7,22 @@ function solution(n, k) {
   //각각 p0 / 0p0 / 0p 형태
   //-0p0-, p0, 0p, p(자릿수에 0이 없는 애)인 경우를 소수라고 함
 
-  const convertNum = n.toString(k);
+  const convertNum = n.toString(k).split("0");
 
-  if (convertNum.length === 1) {
-    return 1;
-  }
-
-  let list = convertNum.split("0");
-  //0으로 스플릿하면 01010은 어떻게 알아보지??
-
-  list = list.filter((el) => {
-    if (el.length !== 0 && el !== "1") {
-      return el;
+  const isPrime = (num) => {
+    //진짜 소수 구하는 문제...
+    if (num <= 1) return false;
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+      if (num % i === 0) return false;
     }
+    return true;
+  };
+
+  convertNum.forEach((item) => {
+    isPrime(item) ? answer++ : answer;
   });
-
-  //이게 맞나.... 이게머고....
-
-  console.log(list);
-  answer = list.length;
 
   return answer;
 }
 
-//정확성 85.7/100 으로 실패
+//성공!
