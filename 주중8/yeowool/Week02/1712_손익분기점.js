@@ -20,10 +20,10 @@ const [A, B, C] = [input[0], input[1], input[2]];
 
 // const [A, B, C] = [3, 2, 1];
 
-if(B > C) {
+if(B >= C) {
     console.log(-1);
 } else {
-    let marjin = A / (C - B) + 1;
+    // let marjin = A / (C - B) + 1; => 수정
     if(marjin > 0) {
     console.log(marjin)
     } else {
