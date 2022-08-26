@@ -1,0 +1,15 @@
+const input = require("fs").readFileSync("/dev/stdin").toString().trim().split("\n");
+
+const n = +input[0].split(' ')[0];
+const poketmons = input.slice(1, n + 1);
+const questions = input.slice(n + 1)
+
+function solution(poketmons, questions) {
+	const map = new Map(poketmons.map((poketmon, index) => [poketmon, index + 1]));
+	questions.forEach(question => {
+		if (Number.isNaN(+question)) console.log(map.get(question));
+		else console.log(poketmons[+question - 1]);
+	});
+}
+
+solution(poketmons, questions);

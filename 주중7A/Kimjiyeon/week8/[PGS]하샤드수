@@ -1,0 +1,8 @@
+function solution(x) {    
+	var sum = 0;    
+	var arr = String(x).split('');    //문자열로 만든후 나눠줌
+	for(var i=0; i<arr.length; i++) { 
+		sum += Number(arr[i]);          //숫자로 변환해서 더해줌
+    }  
+return (x % sum == 0) ? true : false;
+}
