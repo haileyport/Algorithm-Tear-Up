@@ -15,7 +15,6 @@ let input = fs.readFileSync('./07_11478.txt').toString().trim();
 // }
 
 // console.log(str.size);
-console.log(input)
 
 function solution (income){
   let newSet = new Set();
