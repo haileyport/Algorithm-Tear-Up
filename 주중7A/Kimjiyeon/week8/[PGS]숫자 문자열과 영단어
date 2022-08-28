@@ -1,0 +1,12 @@
+function solution(s) {
+    var answer = 0;
+    var arry=["zero","one","two","three","four","five","six","seven","eight","nine"];
+
+    for(var value in arry){
+        s = s.replace(arry[value],value);
+
+    };
+    var answer = parseInt(s);
+    return answer;
+
+}
