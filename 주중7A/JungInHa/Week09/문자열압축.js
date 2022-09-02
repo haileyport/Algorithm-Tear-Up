@@ -2,7 +2,7 @@ function solution(s) {
   let answer = s.length;
   let max = s.length;
       
-  for (let i = 1; i < max; i++) { 
+  for (let i = 1; i  <= max/2; i++) { 
       var regex = new RegExp('.{1,' + i + '}', 'g');
       let cut = s.match(regex);
       
