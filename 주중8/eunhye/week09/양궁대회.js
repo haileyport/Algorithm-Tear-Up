@@ -25,7 +25,7 @@ function solution(n, info) {
       let diff = ryanScore - apeachScore; //점수차
       if (diff > maxDiff) {
         //최댓값이 갱신될 때
-        board[10] = n - count; //화살 수 차감
+        board[10] = n - count; //남은 화살은 전부 0점을 맞추도록 해주는 부분
         maxDiff = diff;
         ryanInfo = board; //최댓값을 때 점수 상황 덮어쓰기
       }
