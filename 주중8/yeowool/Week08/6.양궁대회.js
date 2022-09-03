@@ -154,5 +154,77 @@ info를 돌면서 result에 해당하는 배열을 추가해줘야할까..?
 
 */
 
+// 풀이를 하기엔 이미 너무 많은 시간을 쏟았고 다른 것들을 해야하기 때문에
+// 풀이 해설이 없는 다른 분의 풀이코드를 보면서
+// 직접 의사코드를 작성해보기로한다!
+// 사실 이거도 자신이없다^^...
 
+/*
+shot이라는 함수를 만든다.
+shot함수는 peachScore, ryonScore, count, idx, board를 인자로 받아서 재귀로 푼다!
+count가 n 재귀 탈출 조건으로 n < count을 설정한다.
+*/
 
+let n = 5
+let info = [2, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0]
+
+function solution(n, info) {
+    let maxDiff = 0; // 가장 큰 점수차이
+    let ryonInfo = Array(11).fill(0); // 라이언의 점수배열을 일단 11개 0으로 채운 배열로 선언한다.
+    
+    const shot = (peachScore, ryonScore, count, idx, board) => { 
+      if(n < count) return
+      if(idx > 10){
+        let diff = ryonScore - peachScore;
+        if(diff > maxDiff){
+          board[10] = n - count;
+          maxDiff = diff
+          ryonInfo = board;
+        }
+        return;
+      }
+      if(n > count) {
+        let board2 = [...board];
+        board2[10 - idx] = info[10 - idx] + 1;
+        shot(peachScore, ryonScore + idx, count + info[10 - idx] + 1, idx + 1, board2);
+      }
+      
+      if(info[10 - idx] > 0){
+        shot(peachScore + idx, ryonScore, count, idx + 1, board)
+      } else {
+        shot(peachScore, ryonScore, count, idx + 1, board)
+      }
+    }
+    shot(0, 0, 0, 0, ryonInfo)
+    
+    if(maxDiff <= 0) return [-1];
+    else return ryonInfo;
+  }
+
+  /*
+  테스트 1 〉	통과 (0.20ms, 33MB)
+테스트 2 〉	통과 (0.46ms, 33.1MB)
+테스트 3 〉	통과 (0.41ms, 33.2MB)
+테스트 4 〉	통과 (0.29ms, 33MB)
+테스트 5 〉	통과 (0.46ms, 33.5MB)
+테스트 6 〉	통과 (0.44ms, 33.6MB)
+테스트 7 〉	통과 (0.32ms, 33.4MB)
+테스트 8 〉	통과 (0.22ms, 33.5MB)
+테스트 9 〉	통과 (0.32ms, 33.4MB)
+테스트 10 〉	통과 (0.22ms, 33.4MB)
+테스트 11 〉	통과 (0.25ms, 33.5MB)
+테스트 12 〉	통과 (0.26ms, 33.6MB)
+테스트 13 〉	통과 (0.42ms, 33.6MB)
+테스트 14 〉	통과 (0.44ms, 33.5MB)
+테스트 15 〉	통과 (0.43ms, 33.5MB)
+테스트 16 〉	통과 (0.35ms, 33.6MB)
+테스트 17 〉	통과 (0.30ms, 33.5MB)
+테스트 18 〉	통과 (0.21ms, 33.5MB)
+테스트 19 〉	통과 (0.18ms, 33.4MB)
+테스트 20 〉	통과 (0.40ms, 33.4MB)
+테스트 21 〉	통과 (0.44ms, 33.6MB)
+테스트 22 〉	통과 (0.48ms, 33.6MB)
+테스트 23 〉	통과 (0.24ms, 33.4MB)
+테스트 24 〉	통과 (0.41ms, 33.6MB)
+테스트 25 〉	통과 (0.42ms, 33.6MB)
+  */
