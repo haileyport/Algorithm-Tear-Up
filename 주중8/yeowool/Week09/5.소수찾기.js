@@ -74,6 +74,7 @@ function solution(n) {
 
 /*
 실패
+
 */
 
 function solution(n) {
