@@ -1,8 +1,11 @@
 function solution(n) {
-  var answer = n;
+  var answer = 0;
   
-  for (let i = 1; i <= n/2; i++) {
-      if (n % i === 0) answer += i;
+  for (let i = 1; i <= Math.sqrt(n); i++) {
+      if (n % i === 0) {
+          answer += i;
+          if (n / i !== i) answer += n / i;
+      }
   }
   
   return answer;
