@@ -3,11 +3,13 @@ function solution(s) {
   const words = s.split(' ');
   
   words.forEach(word => {
-      const weird = [...word].map((letter, idx) => {
-          return (idx % 2 === 0) ? letter.toUpperCase() : letter.toLowerCase() 
-      }).join('');
-      answer.push(weird);
-  });
+    let weirdWord = '';
+    for (let i = 0; i < word.length; i++) {
+        weirdWord += (i % 2 === 0) ? word[i].toUpperCase() 
+        : word[i].toLowerCase();
+    }
+    answer.push(weirdWord);
+});
 
   return answer.join(' ');
 }
