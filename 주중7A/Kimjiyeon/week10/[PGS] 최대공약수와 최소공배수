@@ -1,0 +1,11 @@
+function solution(n, m) {
+    var answer = [];
+    const big = (a, b) => {
+        if (b === 0) return a   
+        return big(b, a % b)  
+    }
+    const small = (a,b) => {
+        return (a*b) / big(a,b)
+    }
+    return [big(n,m), small(n,m)]
+}
