@@ -8,22 +8,19 @@
 
 // const inputs = ["5", "0 4", "1 2", "1 -1", "2 2", "3 3"];
 
-const inputs = require("fs")
-  .readFileSync(__dirname + "/input.txt")
-  .toString();
+const inputs = require("fs").readFileSync("/dev/stdin", "utf8").toString().trim().split("\n");
 
 inputs.shift();
 
-const points = inputs.map((input) => input.split(" ").map(Number));
+const points = inputs.map((input) => input.split(" ").map(Number)); //[[ 0, 4 ], [ 1, 2 ], [ 1, -1 ], [ 2, 2 ], [ 3, 3 ] ]
 
-const sortedPoints = points.sort((x, y) => {
-  if (x[1] === y[1]) {
-    return x[0] - y[0];
+const sortedPoints = points.sort((a, b) => {
+  if (a[1] === b[1]) {
+    return a[0] - b[0];
   }
-  return x[1] - y[1];
+  return a[1] - b[1];
 });
 
-console.log("sortedPoints", sortedPoints);
-console.log();
+// console.log("sortedPoints", sortedPoints);
 
 console.log(sortedPoints.map((point) => point.join(" ")).join("\n"));
