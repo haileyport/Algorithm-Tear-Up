@@ -27,3 +27,5 @@ for (let i = 0; i < input; i++) {
   }
 }
 console.log(str);
+
+// https://nyang-in.tistory.com/211 참고

@@ -1,0 +1,11 @@
+function solution(clothes) {
+    var answer = 1;
+    var obj={};
+    for(let i=0;i<clothes.length;i++){
+        obj[clothes[i][1]]=(obj[clothes[i][1]] || 1) + 1;
+    }
+    for(let j in obj){
+        answer *= obj[j];
+    }
+    return answer-1;
+}
