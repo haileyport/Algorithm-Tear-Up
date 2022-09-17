@@ -1,0 +1,13 @@
+function solution(n) {
+    var answer = 0;
+    answer = getDivisors(n).reduce((a,b)=>a+b,0)
+    return answer;
+}
+
+const getDivisors = (num) => {
+    const divisors = [];
+    for(let i = 1 ; i <= num ; i++){
+        if(num % i === 0) divisors.push(i);
+    }
+    return divisors;
+}
