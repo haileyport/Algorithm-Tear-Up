@@ -61,7 +61,7 @@ function solution(s){
     }
     return s.length === 0 ? 1 : 0
 }
-
+  
 
 /*
 < 의사코드 >
