@@ -1,4 +1,4 @@
-// [PGS] 크레인 인형뽑기 게임 / leve1
+// [PGS] 크레인 인형뽑기 게임 / leve1 실패
 // 난이도 :  level 1
 // 풀이시간 : 
 // 점수 : .  
@@ -43,7 +43,22 @@ crane_game_104.jpg
 
 /*
 <의사코드>
-1. 
+[1,5,3,5,1,2,1,4]
+
+[4]
+[4,3]
+[4,3,1,1]
+answer + 2
+answer = 2
+stack.pop() =>1이 없어짐
+[4,3,3]
+answer + 2
+answer = 4
+stack.pop() =>3이 없어짐
+[4,2]
+[4,2,0]
+[4,2,0,4]
+
 */
 
 
@@ -56,8 +71,8 @@ function solution(board, moves) {
     //크레인 위치정보만큼 반복
     for (let i = 0; i < moves.length; i++) {
       //배열의 인덱스 0부터 고려
-      let n = moves[i] - 1;
-      //크레인 위치 n을 기준으로 세로길이만큼만 탐색
+      let n = moves[i] - 1; //index번호 0이 첫번째니까 -1
+      //크레인 위치 n을 기준으로 세로길이만큼만 탐색 
       for (let j = 0; j < list.length; j++) {
         //배열에 인형이 있을시
         if (list[j][n] !== 0) {
