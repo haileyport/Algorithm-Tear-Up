@@ -1,60 +1,50 @@
 /**
- * 통과 여부 :
- * 시간 : 1시간
- * 점수 :
- * 틀린 이유 :
- * 1. 시간 초과 
- *  - 보통 길이가 100,000인 문제들은 O(nlogn)의 해결방법으로 푸셔야 시간초과가 발생하지 않습니다.
+ * 통과 여부 : 통과
+ * 시간 : 20분
+ * 점수 : + 4
  */
 
 /**
- * 
+ *
  * @param {*} participant 마라톤 참여 선수
  * @param {*} completion 완주한 선수
  * @returns 완주하지 못한 선수
  */
-// function solution(participant, completion) {
-//     /*
-//     1. filter 메서드를 통해 참가자 배열에 있는 요소가 완주 선수 배열에도 있지 않은 사람을 반환한다.
-//     2. 중복된 값이 있다면 완주자에 해당하지 않으므로 추가
-//     */
-//     return participant.filter((el, idx) => {
-//         if(participant.indexOf(el)===idx){
-//             return !completion.includes(el);
-//         }
-//         //동명이인 처리
-//         // 중복된 값이 있다면 완주자에 해당하지 않으므로 추가
-//         return completion.includes(el);
-//     }).join('');
-// }
+ function solution(participant, completion) {
+    // 배타적 논리합 : 교집합을 제외하고 남는 것
+    // 동명이인은 포함해야 함.
+    // 지금은 교집합 아예 뺐으니까 교집합에 해당되는 요소 중에 동명이인 세트 제외하고 넣으면 어떨까
+    // sort 이용해서 정렬 후 index 비교하기
+  
+    let participantArr = participant.sort();
+    let completionArr = completion.sort();
+  
+    for (let i = 0; i < participant.length; i++) {
+        let a = participantArr[i];
+        let b = completionArr[i];
+        
+        // 일치하면 한 놈씩 지우고, 아니 지울 필요 없이 그냥 일치 안하면?
+        // 않이 이렇게 해서 쉽게 풀리네 승질
+        if (a !== b) {
+            return a
+        }
+    }
+  }
 
-// function solution(participant, completion) {
-//     // 배열 중복 검사
-//     let checkArray = new Set(participant);
-
-//     return participant
-//     .filter((el, idx) => {
-//          // 중복되지 않았으면
-//             return checkArray.size === participant.length?
-//             !completion.includes(el)
-//             : (participant.indexOf(el)!==idx);
-//     })
-//     .join('');
-    
-// }
-
-// 내가 뭐하다 푼 걸까..?
-/**
- * 테스트 1 〉	통과 (0.06ms, 33.5MB)
-테스트 2 〉	통과 (0.22ms, 33.6MB)
-테스트 3 〉	통과 (6.54ms, 38.1MB)
-테스트 4 〉	통과 (21.12ms, 38.2MB)
-테스트 5 〉	통과 (15.14ms, 38.1MB)
-
-효율성 테스트는 실패
- */
 
 /*
+function solution(participant, completion) {
+  participant.sort();
+  completion.sort();
+
+  return participant
+    .filter((x, idx) => !completion.includes(x) || x !== completion[idx])
+    .concat(completion.filter((x) => !participant.includes(x)))
+    .join('');
+}
+
+
+
 function solution(participant, completion) {
    // 39
 
@@ -70,8 +60,6 @@ function solution(participant, completion) {
         tail.splice(tail.indexOf(head), 1);
         [head, ...tail] = tail;
     }
-     
-
     }
-   
  */
+
