@@ -17,12 +17,9 @@ function solution(lottos, win_nums) {
   return [best, worst];
 }
 
-//lottos : 로또번호배열
-//당첨번호 배열
-console.log(solution([44, 1, 0, 0, 31, 25], [31, 10, 45, 1, 6, 19]));
-
 //3점
 //20분내
+
 // 테스트 1 〉	통과 (0.11ms, 33.6MB)
 // 테스트 2 〉	통과 (0.09ms, 33.4MB)
 // 테스트 3 〉	통과 (0.10ms, 33.4MB)
