@@ -1,0 +1,26 @@
+function solution(N, stages) {
+    var answer = [];
+    const total=[];
+    for(let i=1;i<=N;i+=1){
+        let cnt=0;
+        let players=0;
+        for(let j=0;j<stages.length;j+=1){
+            if(stages[j]>=i){
+                players+=1;
+            }
+            if(stages[j]==i){
+                cnt+=1;
+            }
+        }
+        answer.push({stage:i,percent:cnt/players});
+    }
+    answer.sort((a,b)=>{
+        if(a.percent===b.percent){
+            return a.stage-b.stage;
+        }else{
+            return b.percent-a.percent;
+        }
+    })
+    // console.log(answer)
+    return answer.map(item=>item.stage)
+}
