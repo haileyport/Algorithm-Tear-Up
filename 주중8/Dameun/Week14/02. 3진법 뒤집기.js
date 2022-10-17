@@ -3,14 +3,13 @@ function solution(n) {
   return parseInt(result, 3);
 }
 
-solution(78413450);
-
 // function solution(n) {
 //     let result = String(n.toString(3)).split("").reverse().join("")*1;
 //     return parseInt(result, 3);
 //   }
-//위처럼 하니까 통과가 되지 않았다.
+//위처럼 하니까 통과가 되지 않았다. Number로 바꾸니 문제가 생긴다 왜..?
 //https://stackoverflow.com/questions/38372658/why-does-javascript-number-function-return-wrong-value-for-this-number
+
 //5분내
 //2점
 
