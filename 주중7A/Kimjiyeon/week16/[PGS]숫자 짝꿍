@@ -1,0 +1,29 @@
+function solution(X, Y) {
+  var answer = "";
+
+  const min_len = X.length < Y.length ? ["X", X.length] : ["Y", Y.length];
+
+  for (let i = 0; i < min_len[1]; i++) {
+    if (min_len[0] === "X") {
+      if (Y.includes(X[i])) {
+        const idx = Y.indexOf(X[i]);
+        Y = Y.substr(0, idx) + Y.substr(idx + 1, Y.length);
+        answer += X[i];
+      }
+    } else {
+      if (X.includes(Y[i])) {
+        const idx = X.indexOf(Y[i]);
+        X = X.substr(0, idx) + X.substr(idx + 1, X.length);
+        answer += Y[i];
+      }
+    }
+  }
+
+  if (answer === "") {
+    return "-1";
+  } else if (answer.match(/[^0]/g) === null) {
+    return "0";
+  } else {
+    return [...answer].sort().reverse().join("");
+  }
+}
