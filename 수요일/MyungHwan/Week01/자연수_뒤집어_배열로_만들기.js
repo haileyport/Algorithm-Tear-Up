@@ -6,3 +6,8 @@ function solution(n) {
     }
     return result
 }
+
+// function solution(n) {
+//     return n.toString().split('').reverse().map(o => o = parseInt(o));
+// }
+//todo reverse()매소드 생각을 못함
