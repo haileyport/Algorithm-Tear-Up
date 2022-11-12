@@ -38,28 +38,33 @@
 */
 
 function solution(dartResult) {
-  //이전의 점수를 더하는 식으로 하면 좋을듯
+  // 라운드를 기준으로 탐색 하기위해 배열로 만든다.
   let nums = dartResult
     .split(/['D'||'S'||'T'||'#'||'*']/)
     .filter((el) => el !== "");
 
-  let sen = dartResult.split(/\d/).filter((el) => el);
+  let operator = dartResult.split(/\d/).filter((el) => el);
 
+  //점수를 쉽게 계산하기 위해 객체에 저장
   const obj = {
     S: 1,
     D: 2,
     T: 3,
   };
 
+  // 문제에서 낸 조건에 맞게 계산
   let total = [];
   let score = 0;
+
+  //nums의 배열의 수와 operator의 배열의 수가 같으므로
   for (let i = 0; i < nums.length; i++) {
-    if (sen[i][1] === "*") {
-      score = Math.pow(nums[i], obj[sen[i][0]]) * 2;
-      total[total.length - 1] = total[total.length - 1] * 2;
-    } else if (sen[i][1] === "#")
-      score = Math.pow(nums[i], obj[sen[i][0]]) * -1;
-    else score = Math.pow(nums[i], obj[sen[i][0]]);
+    if (operator[i][1] === "*") {
+      score = Math.pow(nums[i], obj[operator[i][0]]) * 2;
+      total[total.length - 1] = total[total.length - 1] * 2; //마지막에 저장한값 2배
+    } 
+    else if (operator[i][1] === "#")
+      score = Math.pow(nums[i], obj[operator[i][0]]) * -1;
+    else score = Math.pow(nums[i], obj[operator[i][0]]);
 
     total.push(score);
   }
