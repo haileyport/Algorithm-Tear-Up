@@ -1,9 +1,0 @@
-function solution(s) {
-    regex = /[a-z|A-Z]/;
-    if(regex.test(s)){
-        return false
-    }else if(s.length===4||s.length===6){
-        return true;
-    }
-    return false
-}

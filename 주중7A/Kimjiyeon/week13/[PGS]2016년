@@ -1,5 +1,0 @@
-function solution(a, b) {
-    let day = new Date(`2016 ${a} ${b}`)
-    const word = ['SUN','MON','TUE','WED','THU','FRI','SAT']
-    return word[day.getDay()];
-}
