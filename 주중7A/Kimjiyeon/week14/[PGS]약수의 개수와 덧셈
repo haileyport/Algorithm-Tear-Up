@@ -1,9 +1,0 @@
-function solution(left, right) {
-    var answer = 0;
-
-    for(let i=left; i<=right; i++) {  //제곱근을 1로 나눈 나머지 값이 0이라면
-        Math.sqrt(i) % 1 === 0 ? answer-=i : answer+=i;
-    }  //제곱근을 1로 나눈 나머지 값이 0이면 약수 홀수! 아니면 약수가 짞수!
-    
-    return answer;
-}

@@ -1,9 +1,0 @@
-function solution(a, b) {
-    if(a>b){ l=a; s= b} else{ l=b,s=a}
-    var answer = 0;
-    while(s<=l){
-        answer += s
-        s++
-    }
-    return answer;
-}

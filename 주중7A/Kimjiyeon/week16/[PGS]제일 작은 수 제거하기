@@ -1,7 +1,0 @@
-function solution(arr) {
-    var answer = [];
-    let small = arr.indexOf(Math.min(...arr))
-    arr.splice(small,1)
-    arr.length <= 1 ? answer = [-1] : answer = arr
-    return answer;
-}

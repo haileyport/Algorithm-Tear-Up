@@ -1,9 +1,0 @@
-function solution(s){
-    let count = 0;
-    s = s.toLowerCase()
-    s.split('').map(x=>{
-        if(x==='p') count++
-        if(x==='y') count--
-    })
-    return count===0
-}
