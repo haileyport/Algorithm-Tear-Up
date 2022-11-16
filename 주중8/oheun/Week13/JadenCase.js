@@ -1,30 +1,9 @@
-/*
-통과 여부 : 통과
-시간 : 10분
-점수 : +10
-*/
-
-
 /**
- *
- * @param {*} s 문자열
- * @returns 첫 문자가 대문자이고 나머지가 소문자인 문자
- */
-function solution(s) {
-  // 여러 빈칸도 ' ' split 써두 되나?
-  // charAt은 str -> char
-  // 첫 번째는 대문자 하고 나머지는 그냥 붙여버리기
-  return s
-    .toLowerCase() // 전체 소문자로 변환
-    .split(" ") // 빈칸으로 구분 "3people / unFollowed/ me"
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1)) // 문자열 인덱스
-    .join(" "); // 빈칸 1개로 붙이기
-}
+ * 통과 여부 : 통과
+ * 시간 : 10분
+ * 점수 : +10
+ * 
 
-console.log(solution("abcd    efe"))
-
-
-/*
 테스트 1 〉	통과 (0.05ms, 33.6MB)
 테스트 2 〉	통과 (0.08ms, 33.5MB)
 테스트 3 〉	통과 (0.05ms, 33.4MB)
@@ -43,4 +22,22 @@ console.log(solution("abcd    efe"))
 테스트 16 〉	통과 (0.05ms, 33.5MB)
 테스트 17 〉	통과 (0.06ms, 33.4MB)
 테스트 18 〉	통과 (0.05ms, 33.5MB)
+ */
+
+/*
+- 첫 문자는 대문자 그 외는 소문자
+- 첫 문자가 숫자면 그 외는 소문자
+4
+뭐가 다름..?
+다 소문자로 바꾸고 해야 함.
 */
+function solution(s) {
+    // 여러 빈칸도 ' ' split 써두 되나?
+    // charAt은 str -> char
+    // 첫 번째는 대문자 하고 나머지는 그냥 붙여버리기
+    return s.toLowerCase()
+        .split(' ')
+        .map(word => word.charAt(0).toUpperCase()+word.slice(1))
+        .join(' ');
+    
+}
