@@ -1,0 +1,6 @@
+function solution(participant, completion) {
+    completion.forEach(element => {
+      participant.splice(participant.indexOf(element),1);
+    });
+  return participant[0];
+}

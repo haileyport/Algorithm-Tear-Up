@@ -1,0 +1,19 @@
+function solution(bridge_length, weight, truck_weights) {
+    var answer = 0;
+    let onbridge = [];
+    let onbridgeweight = 0;
+    let time = bridge_length
+    for(let i=0; i<truck_weights.length;i++){
+        onbridge.push(truck_weights[i]);
+        onbridgeweight= onbridge.reduce((a,b)=>a+b,0)
+        if(onbridgeweight>weight){
+            time+=bridge_length
+            onbridge.shift()
+        }else{
+            time++
+        }
+        console.log(onbridge, onbridgeweight,time)
+        
+    }
+    return time;
+}
