@@ -10,5 +10,4 @@ process.stdin.on("data", (data) => {
     }
     str = str + `\n`;
   }
-  console.log(str);
 });
